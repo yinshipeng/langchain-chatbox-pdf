@@ -69,7 +69,7 @@ export default function Home() {
     setQuery('');
 
     try {
-      const response = await fetch('/api/chat-hnswlib', {
+      const response = await fetch('/api/chat', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -168,7 +168,7 @@ export default function Home() {
                     <>
                       <div key={`chatMessage-${index}`} className={className}>
                         {icon}
-                        <div className={styles.markdownanswer}>
+                        <div key={`markdownanswer-${index}`} className={styles.markdownanswer}>
                           <ReactMarkdown linkTarget="_blank">
                             {message.message}
                           </ReactMarkdown>
